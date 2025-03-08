@@ -9,7 +9,7 @@ export const PagesRoutes: Routes = [
       title: 'Starter Page',
       urls: [
         { title: 'Dashboard',
-          url: '/dashboards/dashboard1'
+          //url: '/dashboards/dashboard1'
         },
         { title: 'Starter Page' },
       ],
