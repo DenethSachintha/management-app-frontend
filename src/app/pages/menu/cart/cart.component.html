@@ -1,0 +1,9 @@
+<div *ngIf="cartItems.length > 0">
+  <h3>Cart Items</h3>
+  <ul>
+    <li *ngFor="let item of cartItems">
+      {{ item.description }} - ${{ item.unitPrice }} (Qty: {{ item.qtyOnHand }})
+    </li>
+  </ul>
+</div>
+<p *ngIf="cartItems.length === 0">Cart is empty.</p>

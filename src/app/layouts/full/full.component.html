@@ -1,2 +1,18 @@
 <app-top-strip></app-top-strip>
-<router-outlet></router-outlet>
+<mat-sidenav-container class="mainWrapperTwo blue_theme light-theme" autosize autoFocus dir="ltr">
+  <mat-sidenav-content class="contentWrapper" #content>
+
+    <app-header [showToggle]="!isOver" ></app-header>
+    <main class="pageWrapper maxWidth">
+      <!-- ============================================================== -->
+      <!-- (toggleMobileNav)="sidenav.toggle()" -->
+      <!-- ============================================================== -->
+      <router-outlet></router-outlet>
+    </main>
+
+    <div class="p-16 p-b-30 text-center">
+      Design & Developed by <a class="text-decoration-none" href="" target="_blank">Deneth Sachintha</a>
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

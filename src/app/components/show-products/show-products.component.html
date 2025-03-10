@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-sm-6 col-lg-4" *ngFor="let product of products">
+    <mat-card class="w-100">
+      <mat-card-content class="p-b-24 p-t-12 position-relative">
+        <button
+          mat-mini-fab
+          class="icon-30 cart-btn bg-primary text-white d-block"
+          matTooltip="Add to Cart"
+          (click)="addToCart(product)"
+        >
+          <i-tabler name="basket" class="icon-16"></i-tabler>
+        </button>
+
+        <mat-card-title class="mat-headline-2 f-s-16 m-b-4">{{ product.description }}</mat-card-title>
+        <div class="m-t-8">
+          <p class="f-w-600 f-s-16">Product ID: {{ product.id }}</p>
+          <p class="f-w-600 f-s-16">Price: ${{ product.unitPrice }}</p>
+          <p class="f-w-600 f-s-16">Quantity: {{ product.qtyOnHand }}</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
