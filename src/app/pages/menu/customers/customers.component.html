@@ -1,1 +1,96 @@
-<p>customers works!</p>
+<mat-card class="cardWithShadow theme-card">
+  <mat-card-header>
+    <mat-card-title class="m-b-0">Add Customer</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="b-t-1">
+    <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-lg-6">
+          <!-- input -->
+          <mat-label class="f-w-600 m-b-8 d-block">Customer Name</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <mat-label>Customer Name</mat-label>
+            <input matInput formControlName="name" placeholder="Enter customer name" />
+            <mat-error *ngIf="customerForm.get('name')?.invalid && customerForm.get('name')?.touched">
+              Name is required (min 3 chars)
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <!-- input -->
+          <mat-label class="f-w-600 m-b-8 d-block">Salary</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <mat-label>Salary</mat-label>
+            <input matInput type="number" formControlName="salary" placeholder="Enter salary" />
+            <mat-error *ngIf="customerForm.get('salary')?.invalid && customerForm.get('salary')?.touched">
+              Salary must be a positive number
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <mat-label class="f-w-600 m-b-8 d-block">Address</mat-label>
+      <div formGroupName="address">
+        <div class="row">
+
+          <div class="col-lg-6">
+            <!-- input -->
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <mat-label>Street Address 1</mat-label>
+              <input matInput formControlName="streetLine1" placeholder="Enter street address" />
+              <mat-error *ngIf="customerForm.get('address.streetLine1')?.invalid && customerForm.get('address.streetLine1')?.touched">
+                Street address is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+        <div class="col-lg-6">
+          <!-- input -->
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <mat-label>Street Address 2</mat-label>
+            <input matInput formControlName="streetLine2" placeholder="Enter street address (optional)" />
+          </mat-form-field>
+        </div>
+
+
+
+        <div class="col-lg-6">
+          <!-- input -->
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <mat-label>City</mat-label>
+            <input matInput formControlName="city" placeholder="Enter city" />
+            <mat-error *ngIf="customerForm.get('address.city')?.invalid && customerForm.get('address.city')?.touched">
+              City is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+
+        <div class="col-lg-6">
+          <!-- input -->
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <mat-label>Province</mat-label>
+            <input matInput formControlName="province" placeholder="Enter province" />
+            <mat-error *ngIf="customerForm.get('address.province')?.invalid && customerForm.get('address.province')?.touched">
+              Province is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <!-- input -->
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <mat-label>Country</mat-label>
+            <input matInput formControlName="country" placeholder="Enter country" />
+            <mat-error *ngIf="customerForm.get('address.country')?.invalid && customerForm.get('address.country')?.touched">
+              Country is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        </div>
+      </div>
+
+      <div class="m-t-12">
+        <button mat-flat-button color="primary" type="submit" class="m-r-8">Submit</button>
+        <button mat-stroked-button color="warn" type="reset">Cancel</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
